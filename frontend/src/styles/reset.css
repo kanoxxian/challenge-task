@@ -1,0 +1,27 @@
+/* Reset all margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove borders from all elements */
+*,
+*::before,
+*::after {
+    border: 0;
+    border-radius: 0;
+}
+
+/* Set the width and height of the page to 100% */
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Remove any default margin or padding from the body element */
+body {
+    margin: 0;
+    padding: 0;
+}
