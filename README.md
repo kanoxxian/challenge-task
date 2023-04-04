@@ -15,7 +15,7 @@ Congratulations on progressing to the technical challenge
 * Download and Install Docker Desktop: https://www.docker.com/products/docker-desktop/
 * Open a Powershell or CLI window and navigate to the folder where you cloned the repository
 * Run `docker-compose up`
-* You should have a local container running and you should be able to access the local page on `http://localhost:8080/`
+* You should have a local container running, and you should be able to access the local page on `http://localhost:8080/`
 
 ## Task
 
