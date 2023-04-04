@@ -36,12 +36,15 @@ export default {
     },
     postMethodTest() {
       try {
-        axios.post('/index.php', {
-          testData: "12345"
-        }).then(response => {
-          this.postResponse = response.data;
-
-        });
+        axios.post('http://localhost/index.php', {
+          testData: 'test',
+        })
+            .then(response => {
+              this.postResponse = response.data;
+            })
+            .catch(error => {
+              console.log(error);
+            });
       } catch (error) {
         console.error(error);
       }
@@ -58,7 +61,7 @@ h1 {
 .challenge-page {
   display: flex;
   flex-direction: column;
-  gap:2em;
+  gap: 2em;
 }
 
 .response-section {
@@ -70,18 +73,10 @@ h1 {
   color: whitesmoke;
 }
 
-.buttons button{
+.buttons button {
   /*padding: 10px;*/
   height: 2em;
   width: 20em;
-}
-
-.responses {
-  width: 60%;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  gap:2em;
 }
 
 .responses textarea {

@@ -1,9 +1,10 @@
 <?php
 // Check if the request is a POST request
+use App\RequestHandler;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the request data
-    $input = file_get_contents('php://input');
-    $data = json_decode($input, true);
+    $data = RequestHandler::post();
 
     // Your logic to handle the POST request
     // For example, you can save the data to a database or process it in some way
@@ -16,13 +17,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 } else if($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Your logic to handle the GET request
-    var_dump($_GET);
+    $data = RequestHandler::get();
 
     header('Content-Type: application/json');
     echo json_encode([
         'status' => 'success',
         'message' => 'Data processed successfully',
-//        'data' => $data
+        'data' => $data
     ]);
 } else {
     // Return an error response for non-POST requests
