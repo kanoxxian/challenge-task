@@ -4,20 +4,22 @@
   "description": "BA Challenge for Junior Software Developer",
   "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --host 0.0.0.0 --poll",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.2",
+    "axios": "^0.26.1"
   },
   "devDependencies": {
-    "eslint-plugin-vue": "^9",
-    "babel-eslint": "^10.1",
     "@vue/cli-plugin-babel": "^4.5.15",
     "@vue/cli-plugin-eslint": "^4.5.15",
     "@vue/cli-service": "^4.5.15",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "eslint-plugin-vue": "^9",
+    "babel-eslint": "^10.1"
   },
   "eslintConfig": {
     "root": true,

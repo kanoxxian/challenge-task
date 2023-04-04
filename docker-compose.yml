@@ -4,8 +4,9 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    volumes: # Add this section to your challenge-frontend service
+    volumes:
       - ./frontend:/app
+      - /app/node_modules
     ports:
       - "8080:8080"
     networks:
