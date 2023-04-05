@@ -9,7 +9,7 @@ Congratulations on progressing to the technical challenge
 * The branch name should be your name, all lower case, with hyphens
 #### To build the environment:
 * Upgrade your WLS environment on your machine:
-  * Open a Powershell or CLI window, with admin priviliges
+  * Open a Powershell or CLI window, with admin privileges
   * Run `wsl --update`
   
 * Download and Install Docker Desktop: https://www.docker.com/products/docker-desktop/
