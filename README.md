@@ -11,6 +11,7 @@ Congratulations on progressing to the technical challenge
 * Upgrade your WLS environment on your machine:
   * Open a Powershell or CLI window, with admin privileges
   * Run `wsl --update`
+  * If the option isn't available because you don't have WSL, run `wsl --install`
   
 * Download and Install Docker Desktop: https://www.docker.com/products/docker-desktop/
 * Open a Powershell or CLI window and navigate to the repository folder and run the `docker-compose up` command inside of it - this will build your Docker containers to run your application
@@ -31,7 +32,7 @@ Congratulations on progressing to the technical challenge
 
 1. Create a simple form with input fields for a user's first name, last name, and email address. Add validation to ensure all fields are filled in and the email address is in the correct format. Display an error message when any validation fails.
 
-2. Fetch a list of users from a given API endpoint and display it in a table. Each row should display the user's first name, last name, email, and a button to delete the user. When the delete button is clicked, remove the user from the table.
+2. Fetch a list of users from the `getUsers` endpoint and display it in a table. Each row should display the user's first name, last name, email, and a button to delete the user. When the delete button is clicked, remove the user from the table.
 
 3. Add a search box above the users' table. As the user types into the search box, filter the table to only display rows that contain the search query in any of the columns (first name, last name, or email).
 
