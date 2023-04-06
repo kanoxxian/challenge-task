@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../vendor/autoload.php';
 // Check if the request is a POST request
 use App\RequestHandler;
 
