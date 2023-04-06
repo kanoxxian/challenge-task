@@ -9,12 +9,11 @@ Congratulations on progressing to the technical challenge
 * The branch name should be your name, all lower case, with hyphens
 #### To build the environment:
 * Upgrade your WLS environment on your machine:
-  * Open a Powershell or CLI window, with admin priviliges
+  * Open a Powershell or CLI window, with admin privileges
   * Run `wsl --update`
   
 * Download and Install Docker Desktop: https://www.docker.com/products/docker-desktop/
-* Open a Powershell or CLI window and navigate to the folder where you cloned the repository
-* Run `docker-compose up`
+* Open a Powershell or CLI window and navigate to the repository folder and run the `docker-compose up` command inside of it - this will build your Docker containers to run your application
 * You should have a local container running, and you should be able to access the local page on `http://localhost:8080/`
 
 ## Task
