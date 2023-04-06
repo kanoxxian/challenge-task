@@ -11,6 +11,7 @@ Congratulations on progressing to the technical challenge
 * Upgrade your WLS environment on your machine:
   * Open a Powershell or CLI window, with admin privileges
   * Run `wsl --update`
+  * If the option isn't available because you don't have WSL, run `wsl --install`
   
 * Download and Install Docker Desktop: https://www.docker.com/products/docker-desktop/
 * Open a Powershell or CLI window and navigate to the repository folder and run the `docker-compose up` command inside of it - this will build your Docker containers to run your application
