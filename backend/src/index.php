@@ -5,7 +5,22 @@ use App\RequestHandler;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the request data
-    $data = RequestHandler::post();
+    $data = json_decode(file_get_contents('php://input'));
+
+    if (empty($data->action)) {
+        throw new Exception('Action not defined');
+    }
+
+    $action = $data->action;
+
+    switch ($action) {
+        case 'updateUsers':
+            $response = RequestHandler::getUsers();
+            break;
+        default:
+            $response = RequestHandler::post($data);
+            break;
+    }
 
     // Your logic to handle the POST request
     // For example, you can save the data to a database or process it in some way
@@ -14,17 +29,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode([
         'status' => 'success',
         'message' => 'Data processed successfully',
-        'data' => $data
+        'data' => $response
     ]);
 } else if($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Your logic to handle the GET request
-    $data = RequestHandler::get();
+    if (empty($_GET['action'])) {
+        throw new Exception('Action not defined');
+    }
+
+    $action = $_GET['action'];
+
+    switch ($action) {
+        case 'getUsers':
+            $response = RequestHandler::getUsers();
+            break;
+        default:
+            $response = RequestHandler::get();
+            break;
+    }
 
     header('Content-Type: application/json');
     echo json_encode([
         'status' => 'success',
         'message' => 'Data processed successfully',
-        'data' => $data
+        'data' => $response
     ]);
 } else {
     // Return an error response for non-POST requests

@@ -14,8 +14,13 @@ class RequestHandler
         return 'GET works';
     }
 
-    public static function post()
+    public static function getUsers()
     {
-        return 'POST works';
+        return (new Users())->getUsers();
+    }
+
+    public static function post($data)
+    {
+        return $data ? 'POST works and data was received - ' . json_encode($data) : 'No data provided';
     }
 }

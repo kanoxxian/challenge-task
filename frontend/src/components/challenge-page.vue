@@ -1,13 +1,13 @@
 <template>
   <div class="challenge-page">
     <div class="response-section">
-      <label for="getResponse">GET Response:</label>
-      <section id="getResponse" v-text="getResponse"></section>
+      <label for="getResponseExample">GET Response:</label>
+      <section id="getResponseExample" v-text="getResponseExample"></section>
       <button @click="getMethodExample">Example GET</button>
     </div>
     <div class="response-section">
-      <label for="postResponse">POST Response:</label>
-      <section id="postResponse" v-text="postResponse"></section>
+      <label for="postResponseExample">POST Response:</label>
+      <section id="postResponseExample" v-text="postResponseExample"></section>
       <button @click="postMethodExample">Example POST</button>
     </div>
   </div>
@@ -20,15 +20,15 @@ export default {
   name: "challenge-page",
   data() {
     return {
-      getResponse: null,
-      postResponse: null
+      getResponseExample: null,
+      postResponseExample: null
     }
   },
   methods: {
     getMethodExample() {
       try {
-        axios.get('http://localhost/index.php?test=1').then(response => {
-          this.getResponse = response.data.data;
+        axios.get('http://localhost/index.php?action=test').then(response => {
+          this.getResponseExample = response.data.data;
         });
       } catch (error) {
         console.error(error);
@@ -37,9 +37,10 @@ export default {
     postMethodExample() {
       try {
         axios.post('http://localhost/index.php', {
-          testData: 'test',
+          action: 'test',
+          dataForAction: {}
         }).then(response => {
-          this.postResponse = response.data.data;
+          this.postResponseExample = response.data.data;
         }).catch(error => {
           console.log(error);
         });
