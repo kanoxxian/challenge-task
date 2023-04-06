@@ -1,4 +1,4 @@
-# BA Software Developer Challenge v1 Test
+# BA Software Developer Challenge v1
 
 Congratulations on progressing to the technical challenge
 
