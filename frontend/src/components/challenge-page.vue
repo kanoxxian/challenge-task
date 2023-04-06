@@ -3,12 +3,12 @@
     <div class="response-section">
       <label for="getResponse">GET Response:</label>
       <section id="getResponse" v-text="getResponse"></section>
-      <button @click="getMethodTest">Test GET</button>
+      <button @click="getMethodExample">Example GET</button>
     </div>
     <div class="response-section">
       <label for="postResponse">POST Response:</label>
       <section id="postResponse" v-text="postResponse"></section>
-      <button @click="postMethodTest">Test POST</button>
+      <button @click="postMethodExample">Example POST</button>
     </div>
   </div>
 </template>
@@ -25,26 +25,24 @@ export default {
     }
   },
   methods: {
-    getMethodTest() {
+    getMethodExample() {
       try {
         axios.get('http://localhost/index.php?test=1').then(response => {
-          this.getResponse = response.data;
+          this.getResponse = response.data.data;
         });
       } catch (error) {
         console.error(error);
       }
     },
-    postMethodTest() {
+    postMethodExample() {
       try {
         axios.post('http://localhost/index.php', {
           testData: 'test',
-        })
-            .then(response => {
-              this.postResponse = response.data;
-            })
-            .catch(error => {
-              console.log(error);
-            });
+        }).then(response => {
+          this.postResponse = response.data.data;
+        }).catch(error => {
+          console.log(error);
+        });
       } catch (error) {
         console.error(error);
       }
@@ -73,13 +71,19 @@ h1 {
   color: whitesmoke;
 }
 
-.buttons button {
+.response-section button {
   /*padding: 10px;*/
   height: 2em;
-  width: 20em;
+  width: 10em;
 }
 
-.responses textarea {
+.response-section label {
+  /*padding: 10px;*/
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.response-section section {
   flex-grow: 1;
 }
 </style>
