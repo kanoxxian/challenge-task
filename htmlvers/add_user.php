@@ -31,7 +31,7 @@
       $errors[] = "Email is required";
     } else {
       $email = test_input($_POST["email"]);
-      // Check if email address is well-formed
+      // Check if email address is correct
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Invalid email format";
       }

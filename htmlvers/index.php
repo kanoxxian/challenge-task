@@ -51,7 +51,7 @@ if(isset($_POST['submit'])) {
     </tr>
   </thead>
   <tbody id="user-table-body">
-    <!-- Populate table with PHP -->
+    <!-- PHP LOOP -->
     <?php
       require_once 'Users.php';
       foreach ($users as $user) {
@@ -120,7 +120,7 @@ if(isset($_POST['submit'])) {
     }
   }
 
-  // Initial table creation
+  // table creation
   createTable();
   </script>
 </body>
