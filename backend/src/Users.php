@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 class Users
 {
     protected array $users = [

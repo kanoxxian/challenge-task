@@ -3,21 +3,29 @@
     <h1>Welcome to the Challenge Page!</h1>
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/challenge-page">Challenge Page</router-link>
+      <router-link to="/challenge-page">Challenge Page</router-link> |
+      <router-link to="/form">Form</router-link>  |
+      <router-link to="/table">User Table</router-link>
     </nav>
     <router-view />
+    <usertable></usertable>
   </div>
 </template>
 
 <script>
+import usertable from "./components/table2.vue"
+
 export default {
   name: "App",
+  components: {
+    usertable: usertable
+  }
 };
 </script>
 
 <style>
 #app {
-  background: #144a91;
+  background: #12233a;
   padding: 0;
   margin: 0;
   height: 100%;
